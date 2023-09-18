@@ -49,7 +49,7 @@
 	<br>
 	<h3>Projeto com Controle de Versão utilizando git</h3>
 	<h4>Tiago Caceraghi dos Santos</h4>
-	<h5> Versão 0.0.3</h5
+	<h5> Versão 0.0.3 </h5
 	</div>
 	<div class="container">
 	<hr>
