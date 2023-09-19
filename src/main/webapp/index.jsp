@@ -37,8 +37,7 @@
         </li>
       </ul>
       <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
+        <a class="nav-link" href="login.jsp"> Login(Entrar)</a>
       </form>
     </div>
   </div>
@@ -49,22 +48,11 @@
 	<br>
 	<h3>Projeto com Controle de Versão utilizando git</h3>
 	<h4>Tiago Caceraghi dos Santos</h4>
-	<h5> Versão 0.0.3 </h5
+	<h5> Versão 0.0.3 </h5>
 	</div>
 	<div class="container">
 	<hr>
-	<form action="ServletOi" method="post">
-	  <div class="mb-3">
-	    <label for="exampleInputEmail1" class="form-label">Email</label>
-	    <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-	  </div>
-	  <div class="mb-3">
-	    <label for="exampleInputPassword1" class="form-label">Senha</label>
-	    <input type="password" name="senha" class="form-control" id="exampleInputPassword1">
-	  </div>
-	  <button type="submit" class="btn btn-primary">Login</button>
-	</form>
-	<h4>${msg}</h4>
+	
 	<hr>
 	</div>
 	<div class="container">
