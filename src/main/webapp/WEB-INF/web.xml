@@ -38,4 +38,14 @@
     <servlet-name>ServletUsuario</servlet-name>
     <url-pattern>/ServletUsuario</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ServletProduto</display-name>
+    <servlet-name>ServletProduto</servlet-name>
+    <servlet-class>controller.ServletProduto</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletProduto</servlet-name>
+    <url-pattern>/ServletProduto</url-pattern>
+  </servlet-mapping>
 </web-app>

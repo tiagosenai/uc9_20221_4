@@ -14,7 +14,7 @@
 	<form action="<%= request.getContextPath() %>/ServletUsuario" method="post" id="formUsuario">
 		<div class="mb-3">
 		  <label for="formGroupExampleInput" class="form-label">Código</label>
-		  <input type="text" name="id" id="id" class="form-control" placeholder="Nome do Usuário" readonly="readonly" value="${user01.id}">
+		  <input type="text" name="id" id="id" class="form-control" placeholder="Código do Usuário" readonly="readonly" value="${user01.id}">
 		</div>
 		<div class="mb-3">
 		  <label for="formGroupExampleInput" class="form-label">Usuário</label>
@@ -41,6 +41,14 @@ function limparDados() {
 	
 	for (x=0; x < campus.length; x++){
 		campus[x].value = '';
+	}
+}
+
+function apagarUsuario(){
+	if(confirm("Deseja realmente apagar o usuário?")){
+		document.getElementById("formUsuario").method = 'get';
+		document.getElementById("acao").value = 'deletar';
+		document.getElementById("formUsuario").submit();
 	}
 }
 </script>

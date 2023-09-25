@@ -70,4 +70,13 @@ public class UsuarioRepository {
 			res.next();
 			return res.getBoolean("existe");
 		}
+		
+		//Deletar o Usuário JS
+		public void deletarUsuario(String userId) throws Exception{
+			String sql = "DELETE FROM usuario WHERE id = ?;";
+			PreparedStatement stmt = conn.prepareStatement(sql);
+			stmt.setLong(1, Long.parseLong(userId));
+			stmt.executeUpdate();
+			conn.commit();
+		}
 }

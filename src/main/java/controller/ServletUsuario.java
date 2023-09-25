@@ -25,7 +25,18 @@ public class ServletUsuario extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+    	try {
+			String acao = request.getParameter("acao");
+			if (acao != null && !acao.isEmpty() & acao.equalsIgnoreCase("deletar")) {
+				String userId = request.getParameter("id");
+				
+				userRepository.deletarUsuario(userId);
+				request.setAttribute("msg", "Excluído com Sucesso!!!");
+				request.getRequestDispatcher("painel/inicio.jsp").forward(request, response);
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
