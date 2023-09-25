@@ -3,6 +3,8 @@ package dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 
 import conexao.ConexaoBanco;
 import model.Usuario;
@@ -78,5 +80,37 @@ public class UsuarioRepository {
 			stmt.setLong(1, Long.parseLong(userId));
 			stmt.executeUpdate();
 			conn.commit();
+			
+		}
+		
+		public List<Usuario> consultarUsuarioLista(String nome) throws Exception{
+			List<Usuario> listaUsuario = new ArrayList<Usuario>();
+			String sql = "SELECT * FROM usuario WHERE usuario like ?";
+			PreparedStatement stmt = conn.prepareStatement(sql);
+			stmt.setString(1, "%" + nome + "%");
+			ResultSet rst = stmt.executeQuery();
+			while (rst.next()) {
+				Usuario user01 = new Usuario();
+				user01.setId(rst.getLong("id"));
+				user01.setUsuario(rst.getString("usuario"));
+				user01.setSenha(rst.getString("senha"));
+				
+				listaUsuario.add(user01);
+			}
+			return listaUsuario;
+		}
+		
+		public Usuario consultarUsuarioID(String id) throws Exception{
+			Usuario user01 = new Usuario();
+			String sql = "SELECT * FROM usuario WHERE id = ?";
+			PreparedStatement stmt = conn.prepareStatement(sql);
+			stmt.setLong(1, Long.parseLong(id));
+			ResultSet rst = stmt.executeQuery();
+			while (rst.next()) {
+				user01.setId(rst.getLong("id"));
+				user01.setUsuario(rst.getString("usuario"));
+				user01.setSenha(rst.getString("senha"));
+			}
+			return user01;
 		}
 }
